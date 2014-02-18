@@ -7,3 +7,4 @@ $(document).ready(function(){
 		new ListView({model: conctact});
 	});
 });
+
