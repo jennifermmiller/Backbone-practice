@@ -4,7 +4,8 @@ var ListView = Backbone.View.extend({
 	createTemplate: _.template($('#list-item-template').text()),
 
 	events: {
-		'click .expand': 'getFocused' //if you take out the class, it will target this.el
+		'click .expand': 'toJumbotron', //if you take out the class, it will target this.el
+		//'blur .focus-item' : 'outOfTron'
 	},
 
 	initialize: function(){
@@ -17,9 +18,17 @@ var ListView = Backbone.View.extend({
 		this.$el.html(this.createTemplate(this.model.attributes));
 	},
 
-	getFocused: function(){
-		console.log('did we make it here?!');
+	toJumbotron: function(){
 		new MainView({model: this.model});
-		this.$el.hide();
+		//var getBack = this.model.cid();
+		// this.$el.hide();
+		// $('.container').on('blur', '.focus-item', function(){
+		// 	ContactsCollection.findWhere(function())
+		// 	this.$el.show();
+		// });
 	}
+
+	// outOfTron: function(){
+	// 	this.$el.show();
+	// }
 });

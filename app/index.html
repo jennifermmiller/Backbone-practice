@@ -37,7 +37,7 @@
                 <h3 class="text-muted">Backbone Practice</h3>
             </div>
 
-            <div class="jumbotron js-focus-item"></div>
+            <div class="jumbotron js-focus-item">Who shall we investigate?</div>
 
             <div class="app row marketing">
                 <div class="col-lg-6 js-contact-list"></div>
@@ -51,7 +51,7 @@
 
         <script type="text/template" id="list-item-template">
             <div class="left-side">    
-                <image class="pic" src="<%=avatar%>"/>
+                <img class="pic" src="<%=avatar%>"/>
             </div>
             <div class="right-side">
                 <h4 class="expand"><%=name%></h4>
@@ -60,12 +60,33 @@
         </script>
 
         <script type="text/template" id="main-item-template">
-            <h1><%=name%></h1>
+            <div class="top-left">
+                <h1><%=name%></h1>
+                <span><%=phone%></span>
+            </div>    
+            <div class="top-right">
+                <img src="<%=avatar%>"/>
+            </div>    
+            
             <p><%=bio%></p>
-            <p><%=phone%></p>
-            <image src="<%=avatar%>"/>
-            <button class="edit">Edit..</button>
+            
+            <div class="options">
+                <button class="edit">Edit...</button>
+                <button class="remove">Delete</button>
+                <button class="clear">Clear jumbotron</button>
+            </div>    
         </script>
+
+        <script type="text/template" id="edit-item-template">  
+            <h3>Update Your Info:</h3> 
+            <ul>
+                <li><p>Name:  </p><input type="text" class=" js-edit-name" value<%=name%>/></li> 
+                <li><p>Phone:  </p><input type="text" class=" js-edit-phone" value<%=phone%>/></li> 
+                <li><p>Bio:  </p><input type="text" class=" js-edit-bio" value<%=bio%>/></li> 
+                <li><p>Avatar:  </p><input type="text" class=" js-edit-avatar" value<%=avatar%>/></li> 
+            </ul>
+            <button class="submit">Submit changes</button>
+        </script>        
 
 
         <!-- build:js scripts/vendor.js -->
@@ -106,7 +127,7 @@
         <script src="scripts/contact-model.js"></script>
         <script src="scripts/list-view.js"></script>
         <script src="scripts/main-view.js"></script>
-        <script src="scripts/main-edit.js"></script>
+        <script src="scripts/edit-view.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
