@@ -79,13 +79,15 @@
 
         <script type="text/template" id="edit-item-template">  
             <h3>Update Your Info:</h3> 
-            <ul>
-                <li><p>Name:  </p><input type="text" class=" js-edit-name" value<%=name%>/></li> 
-                <li><p>Phone:  </p><input type="text" class=" js-edit-phone" value<%=phone%>/></li> 
-                <li><p>Bio:  </p><input type="text" class=" js-edit-bio" value<%=bio%>/></li> 
-                <li><p>Avatar:  </p><input type="text" class=" js-edit-avatar" value<%=avatar%>/></li> 
-            </ul>
-            <button class="submit">Submit changes</button>
+            <form> 
+                <ul>
+                    <li><p>Name:</p><input type="text" class=" js-edit-name" value="<%=name%>"/></li> 
+                    <li><p>Phone:</p><input type="text" class=" js-edit-phone" value="<%=phone%>"/></li> 
+                    <li><p>Bio:</p><input type="text" class=" js-edit-bio" value="<%=bio%>"/></li> 
+                    <li><p>Avatar:</p><input type="text" class=" js-edit-avatar" value="<%=avatar%>"/></li> 
+                </ul>
+                <button type="submit">Submit Changes</button>
+            </form>    
         </script>        
 
 

@@ -3,7 +3,7 @@ var MainView = Backbone.View.extend({
 
 	createTemplate: _.template($('#main-item-template').text()),
 
-	events: {
+	events:{
 		"click .edit": 'editModel',
 		"click .remove": 'deleteModel',
 		"click .clear": 'voidJumbotron'
@@ -13,6 +13,8 @@ var MainView = Backbone.View.extend({
 		$('.js-focus-item').html(this.el); //html b/c you dont want to have more than one
 
 		this.render();
+
+		// this.listenTo(this.model, 'destroy', this.remove);
 	},
 
 	render: function(){
@@ -27,9 +29,9 @@ var MainView = Backbone.View.extend({
 		this.remove();
 	},
 
-	// voidJumbotron: function(){
+	voidJumbotron: function(){
 
-	// }
+	}
 });
 
 

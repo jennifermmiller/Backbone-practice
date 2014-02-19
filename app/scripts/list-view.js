@@ -1,3 +1,8 @@
+//Things I want to be able to do:
+//have div on jumbotron hide/show depending on if on jumbotron
+//
+
+
 var ListView = Backbone.View.extend({
 	className: 'list-item',
 
