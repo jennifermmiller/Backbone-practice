@@ -8,7 +8,7 @@ var MainView = Backbone.View.extend({
 	},
 
 	initialize: function(){
-		$('.js-focus-item').html(this.el); //html b/c you dont want to have more than one
+		$('.js-focus-item').html(this.el); //html b/c you dont want to have more than one (vs prepemd/append)
 
 		this.render();
 	},
@@ -18,10 +18,6 @@ var MainView = Backbone.View.extend({
 	},
 
 	clearJumbotron: function(){
-		console.log('clicking?');
 		this.remove();
 	},
 });
-
-
-//more interesting stuff: an edit; 

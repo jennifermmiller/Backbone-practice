@@ -1,6 +1,8 @@
-//To do List:
+//Todo List for this app:
+//Somehow link to the moodel defaults when not filled in?
 //have list-item that corresponds to div on jumbotron hide/show depending on status
-//have edit input focus on name
+//possible to change the way Add new is done?
+//clean up CSS incl. changing edit-bio to text area
 //
 
 
@@ -11,7 +13,6 @@ var ListView = Backbone.View.extend({
 
 	events: {
 		'click .js-to-jumbotron': 'toJumbotron', //if you take out the class, it will target this.el
-		'click .clear-tron': 'clearJumbotron',
 		'click .delete': 'destroy',
 		'click .edit': 'editContact',
 		'click .js-submit-edit': 'saveEdit',
@@ -35,11 +36,6 @@ var ListView = Backbone.View.extend({
 		new MainView({model: this.model});
 	},
 
-	clearJumbotron: function(){
-		console.log('clicking?');
-		('.main-item').remove();
-	},
-
 	destroy: function(){
 		this.model.destroy();
 	},
@@ -50,7 +46,7 @@ var ListView = Backbone.View.extend({
 		$('.js-focus-item').html(this.el);
 
 		this.$el.html(renderTemplate(this.model.attributes));
-		//this.$el.find('.js-edit-name').focus(); Way to focus input at top?
+		this.$el.find('#js-edit-name').focus();
 
 	},
 
@@ -76,9 +72,4 @@ var ListView = Backbone.View.extend({
 
 		new ListView({model: this.model});
 	}
-
-
-	// outOfTron: function(){
-	// 	this.$el.show();
-	// }
 });
