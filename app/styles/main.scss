@@ -58,9 +58,22 @@ body {
 
 // My styles:
 
-.list-item{
-    width: 675px;
-    height: 150px;
+.add-new-contact{
+    position: relative;;
+
+    button{
+        border-radius: 25px;
+        height: 60px;
+        width: 175px;
+        font-size: 18px;
+        position: absolute;
+        right: 0;
+    }
+}
+
+.list-item {
+    //height: 153px;
+    //overflow: hidden;
     margin-bottom: 25px;
     margin-left: 5px;
    
@@ -75,18 +88,28 @@ body {
         display: inline-block;
     }
 
+    .left-side{
+        position: absolute;
+        margin-top: 10px;
+
+        .opt-btn{
+            margin-top: 15px;
+
+            .edit{
+                margin-right: 5px;
+            }
+        }
+    }
     .right-side{
-        width: 550px;
-        margin-left: 115px
+        width: 500px;
+        margin-left: 125px
     }
 
     img {
         width: 100px;
         height: 100px;
-        position: absolute;
-        margin-top: -102px;
-    }    
 
+    }    
 }
 
 .focus-item{
@@ -144,7 +167,10 @@ body {
     }
 }
   
-.edit-info{
+.edit-info {
+    height: auto;
+    overflow: none;
+
     ul{
         list-style: none; 
         padding: 0;  
@@ -163,6 +189,10 @@ body {
                 text-align: left;
             }
 
+            label{
+                width: 70px;
+            }
+
             input{
                 width: 450px;
                 margin-left: 15px;
@@ -172,12 +202,46 @@ body {
     }
 
     button{
-        margin-left: 405px;
+        margin-left: 395px;
         margin-top: 5px;
         border-radius: 25px;
     }
 }
 
+.add-contact-btn{
+    float: right;
+}
+
+#add-contact-form{
+    ul{
+        list-style: none;
+
+        li{
+            margin-top: 15px;
+            font-size: 18px;
+
+            &:first-child{
+                margin-top: none;
+            }
+
+            label{
+                width:70px; 
+            }
+
+            input,
+            textarea {
+                width: 375px;
+                padding-left: 5px;
+            } 
+
+            textarea{
+                height: 85px;
+                max-width: 375px;
+                max-height: 85px;
+            }      
+        }
+    }
+}
 
 
 

@@ -37,11 +37,51 @@
                 <h3 class="text-muted">Backbone Practice</h3>
             </div>
 
-            <div class="jumbotron js-focus-item">Who shall we investigate?</div>
+            <div class="jumbotron js-focus-item">Add Contacts to Start</div>
 
             <div class="app row marketing">
-                <div class="col-lg-6 js-contact-list"></div>
+                <div class="col-lg-12 js-contact-list"></div>
             </div>
+
+           <!-- Button trigger modal: Add Contact -->
+            <button class="btn btn-primary btn-lg add-contact-btn" data-toggle="modal" data-target="#myModal">Add Contact</button>
+
+            <!-- Modal for Add Contact-->
+            <div class="modal fade js-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Add New Contact:</h4>
+                  </div>
+                  <div class="modal-body" id="add-contact-form">
+                        <form>
+                            <ul>
+                                <li>
+                                    <label for="js-new-name">Name:</label>
+                                    <input type="text" id="js-new-name" placeholder="Contact Name"/></li>
+                                <li>
+                                    <label for="js-new-phone">Phone:</label>
+                                    <input type="text" id="js-new-phone" placeholder="Contact Phone Number"/>
+                                </li>
+                                <li>
+                                    <label for="js-new-avatar">Avatar:</label>
+                                    <input type="text" id="js-new-avatar" placeholder="Link to Conact Avatar"/>
+                                </li>
+                                <li>
+                                    <label for="js-new-bio">Bio:</label>
+                                    <textarea type="text" id="js-new-bio" placeholder="Contact Bio"></textarea>
+                                </li>  
+                            </ul>
+                         </form> 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="js-submit btn btn-primary" data-dismiss="modal">Submit Contact</button>
+                </div>
+            </div>
+           </div>
+        </div>
 
             <div class="footer">
                 <p>♥ from J. Mills</p>
@@ -51,12 +91,19 @@
 
         <script type="text/template" id="list-item-template">
             <div class="left-side">    
-                <img class="pic" src="<%=avatar%>"/>
+                <div class="avatar-img">
+                    <img class="pic" src="<%=avatar%>"/>
+                </div>
+                <div class ="opt-btn">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </div>
             </div>
             <div class="right-side">
                 <h4 class="expand"><%=name%></h4>
                 <p><%=bio%></p>
             </div>
+
         </script>
 
         <script type="text/template" id="main-item-template">
@@ -71,23 +118,33 @@
             <p><%=bio%></p>
             
             <div class="options">
-                <button class="edit">Edit...</button>
-                <button class="remove">Delete</button>
                 <button class="clear">Clear jumbotron</button>
             </div>    
         </script>
 
         <script type="text/template" id="edit-item-template">  
-            <h3>Update Your Info:</h3> 
-            <form> 
-                <ul>
-                    <li><p>Name:</p><input type="text" class=" js-edit-name" value="<%=name%>"/></li> 
-                    <li><p>Phone:</p><input type="text" class=" js-edit-phone" value="<%=phone%>"/></li> 
-                    <li><p>Bio:</p><input type="text" class=" js-edit-bio" value="<%=bio%>"/></li> 
-                    <li><p>Avatar:</p><input type="text" class=" js-edit-avatar" value="<%=avatar%>"/></li> 
-                </ul>
-                <button type="submit">Submit Changes</button>
-            </form>    
+            <div class="edit-info">
+                <h3>Update Your Info:</h3> 
+                    <ul>
+                        <li>
+                            <label for="js-edit-name">Name:</label>
+                            <input type="text" id="js-edit-name" value="<%=name%>"/>
+                        </li> 
+                        <li>
+                            <label for="js-edit-phone">Phone:</label>
+                            <input type="text" id="js-edit-phone" value="<%=phone%>"/>
+                        </li>
+                        <li>
+                            <label for="js-edit-avatar">Avatar:</label>
+                            <input type="text" id="js-edit-avatar" value="<%=avatar%>"/>
+                        </li>  
+                        <li>
+                            <label for="js-edit-bio">Bio:</label>
+                            <input type="text" id="js-edit-bio" value="<%=bio%>"/>
+                        </li> 
+                    </ul>
+                    <button class="js-submit-edit">Submit Changes</button>
+            </div>      
         </script>        
 
 
@@ -128,6 +185,7 @@
         <script src="scripts/data.js"></script>
         <script src="scripts/contact-model.js"></script>
         <script src="scripts/list-view.js"></script>
+        
         <script src="scripts/main-view.js"></script>
         <script src="scripts/edit-view.js"></script>
         <script src="scripts/main.js"></script>
