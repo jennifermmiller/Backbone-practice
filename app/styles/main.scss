@@ -72,47 +72,52 @@ body {
 }
 
 .list-item {
-    //height: 153px;
-    //overflow: hidden;
     margin-bottom: 25px;
     margin-left: 5px;
    
-   h4{
-       &:hover{
-        font-weight: 900;
-       }
-    }   
+    .sm-view{
+    height: 153px;
+    overflow: hidden;   
+        
+        h4{
+           &:hover{
+            font-weight: 900;
+            text-decoration: underline;
+           }
+        }   
 
-    .right-side,
-    .left-side{
-        display: inline-block;
-    }
+        .right-side,
+        .left-side{
+            display: inline-block;
+        }
 
-    .left-side{
-        position: absolute;
-        margin-top: 10px;
+        .left-side{
+            position: absolute;
+            margin-top: 10px;
 
-        .opt-btn{
-            margin-top: 15px;
+            .avatar-img img {
+            width: 100px;
+            height: 100px;
+            }  
 
-            .edit{
-                margin-right: 5px;
+            .opt-btn{
+                margin-top: 15px;
+
+                .edit{
+                    margin-right: 5px;
+                }
             }
         }
+
+        .right-side{
+            width: 500px;
+            margin-left: 125px
+        }   
     }
-    .right-side{
-        width: 500px;
-        margin-left: 125px
-    }
+}  
 
-    img {
-        width: 100px;
-        height: 100px;
 
-    }    
-}
-
-.focus-item{
+.main-item{
 
     .top-left,
     .top-right{
@@ -150,20 +155,11 @@ body {
         text-align: left;
     }
     
-    .options{
-        //float: right;
+    .clear-tron {
         margin-top: -15px;
-
-        button {
-            border-radius: 6px;
-            height: 40px;
-            font-size: 16px;
-
-
-            .remove{
-                margin: 0 10px;
-            }    
-        }
+        border-radius: 6px;
+        height: 40px;
+        font-size: 16px;   
     }
 }
   
@@ -202,14 +198,14 @@ body {
     }
 
     button{
-        margin-left: 395px;
         margin-top: 5px;
-        border-radius: 25px;
     }
 }
 
 .add-contact-btn{
-    float: right;
+    position: relative;
+    margin-bottom: 30px;
+    margin-left: 550px;
 }
 
 #add-contact-form{

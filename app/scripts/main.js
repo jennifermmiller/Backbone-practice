@@ -34,7 +34,7 @@ $(document).ready(function(){
 
 		newPerson.save();
 
-		('form').val('');
+		this.$el.find('form').val('');
 	});
 });
 

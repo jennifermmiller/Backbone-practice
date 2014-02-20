@@ -1,5 +1,6 @@
-//Things I want to be able to do:
-//have div on jumbotron hide/show depending on if on jumbotron
+//To do List:
+//have list-item that corresponds to div on jumbotron hide/show depending on status
+//have edit input focus on name
 //
 
 
@@ -9,11 +10,12 @@ var ListView = Backbone.View.extend({
 	createTemplate: _.template($('#list-item-template').text()),
 
 	events: {
-		'click .expand': 'toJumbotron', //if you take out the class, it will target this.el
-		//'blur .focus-item' : 'outOfTron
+		'click .js-to-jumbotron': 'toJumbotron', //if you take out the class, it will target this.el
+		'click .clear-tron': 'clearJumbotron',
 		'click .delete': 'destroy',
 		'click .edit': 'editContact',
-		'click .js-submit-edit': 'saveEdit'
+		'click .js-submit-edit': 'saveEdit',
+		'click .js-cancel-edit': 'cancelEdit'
 	},
 
 	initialize: function(){
@@ -31,12 +33,11 @@ var ListView = Backbone.View.extend({
 
 	toJumbotron: function(){
 		new MainView({model: this.model});
-		//var getBack = this.model.cid();
-		// this.$el.hide();
-		// $('.container').on('blur', '.focus-item', function(){
-		// 	ContactsCollection.findWhere(function())
-		// 	this.$el.show();
-		// });
+	},
+
+	clearJumbotron: function(){
+		console.log('clicking?');
+		('.main-item').remove();
 	},
 
 	destroy: function(){
@@ -44,8 +45,6 @@ var ListView = Backbone.View.extend({
 	},
 
 	editContact: function(){
-		//$('.list-item').html(''); Maybe put height and overflow in seperate class so we can add/remove it
-
 		var renderTemplate = _.template($('#edit-item-template').text());
 
 		$('.js-focus-item').html(this.el);
@@ -68,10 +67,14 @@ var ListView = Backbone.View.extend({
 			avatar: editedAvatar
 		});
 
-		//this.render();
 		new MainView({model: this.model});
 		new ListView({model: this.model});
+	},
 
+	cancelEdit: function() {
+		$('.edit-info').remove();
+
+		new ListView({model: this.model});
 	}
 
 

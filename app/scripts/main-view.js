@@ -1,11 +1,10 @@
 var MainView = Backbone.View.extend({
-	className: 'focus-item',
+	className: 'main-item',
 
 	createTemplate: _.template($('#main-item-template').text()),
 
 	events:{
-		"click .edit": 'editModel',
-		"click .clear": 'voidJumbotron'
+		'click .clear-tron': 'clearJumbotron'
 	},
 
 	initialize: function(){
@@ -18,14 +17,10 @@ var MainView = Backbone.View.extend({
 		this.$el.html(this.createTemplate(this.model.attributes));
 	},
 
-	editModel: function(){
-		new EditView ({model: this.model});
+	clearJumbotron: function(){
+		console.log('clicking?');
+		this.remove();
 	},
-
-
-	voidJumbotron: function(){
-
-	}
 });
 
 

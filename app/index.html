@@ -90,20 +90,21 @@
         </div>
 
         <script type="text/template" id="list-item-template">
-            <div class="left-side">    
-                <div class="avatar-img">
-                    <img class="pic" src="<%=avatar%>"/>
+            <div class= "sm-view">
+                <div class="left-side">    
+                    <div class="avatar-img">
+                        <img class="pic" src="<%=avatar%>"/>
+                    </div>
+                    <div class ="opt-btn">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
                 </div>
-                <div class ="opt-btn">
-                    <button class="edit">Edit</button>
-                    <button class="delete">Delete</button>
+                <div class="right-side">
+                    <h4 class="js-to-jumbotron"><%=name%></h4>
+                    <p><%=bio%></p>
                 </div>
             </div>
-            <div class="right-side">
-                <h4 class="expand"><%=name%></h4>
-                <p><%=bio%></p>
-            </div>
-
         </script>
 
         <script type="text/template" id="main-item-template">
@@ -114,12 +115,8 @@
             <div class="top-right">
                 <img src="<%=avatar%>"/>
             </div>    
-            
             <p><%=bio%></p>
-            
-            <div class="options">
-                <button class="clear">Clear jumbotron</button>
-            </div>    
+            <button class="js-clear-tron clear-tron">Clear Jumbotron</button>  
         </script>
 
         <script type="text/template" id="edit-item-template">  
@@ -143,7 +140,8 @@
                             <input type="text" id="js-edit-bio" value="<%=bio%>"/>
                         </li> 
                     </ul>
-                    <button class="js-submit-edit">Submit Changes</button>
+                    <button class="js-submit-edit">Update</button>
+                    <button class="js-cancel-edit">Cancel</button>
             </div>      
         </script>        
 
@@ -185,9 +183,7 @@
         <script src="scripts/data.js"></script>
         <script src="scripts/contact-model.js"></script>
         <script src="scripts/list-view.js"></script>
-        
         <script src="scripts/main-view.js"></script>
-        <script src="scripts/edit-view.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
